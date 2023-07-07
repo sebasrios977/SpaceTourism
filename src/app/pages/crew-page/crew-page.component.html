@@ -1,0 +1,23 @@
+<section class="crew">
+  <div class="crew__grid">
+    <div class="crew__info">
+      <h2 class="crew__title"><span>02 </span>meet your crew</h2>
+      <div class="crew__intro">
+        <span class="crew__role">{{crew[person].role}}</span>
+        <h2 class="crew__name">{{crew[person].name}}</h2>
+        <p class="crew__text">{{crew[person].bio}}</p>
+      </div>
+
+      <div class="crew__circles">
+        <p [ngClass]="person === 0 ? 'crew__circle--active' : ''" class="crew__circle"></p>
+        <p [ngClass]="person === 1 ? 'crew__circle--active' : ''" class="crew__circle"></p>
+        <p [ngClass]="person === 2 ? 'crew__circle--active' : ''" class="crew__circle"></p>
+        <p [ngClass]="person === 3 ? 'crew__circle--active' : ''" class="crew__circle"></p>
+      </div>
+    </div>
+
+    <div class="crew__photo">
+      <img [src]="crew[person].image" alt="" class="crew__image">
+    </div>
+  </div>
+</section>

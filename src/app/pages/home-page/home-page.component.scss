@@ -1,0 +1,102 @@
+@use '../globales/mixins' as m;
+@use '../globales/variables' as v;
+
+.home {
+  width: 100vw;
+  height: 100vh;
+  background-image: url(../../../assets/home/background-home-mobile.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+
+  @include m.mq(v.$tablet) {
+    background-image: url(../../../assets/home/background-home-tablet.jpg);
+  }
+  @include m.mq(v.$desktop) {
+    background-image: url(../../../assets/home/background-home-desktop.jpg);
+  }
+
+  &__grid {
+    padding: 12rem 2rem 0 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include m.mq(v.$tablet) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      align-items: flex-end;
+      padding: 20rem 6rem 0 6rem;
+      column-gap: 5rem;
+    }
+
+    @include m.mq(v.$desktop) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      align-items: flex-end;
+      padding-top: 25rem;
+    }
+  }
+
+  &__information {
+    margin: 0 auto;
+  }
+
+  &__span {
+    color: darken(white, 20%);
+    text-transform: uppercase;
+    font-size: 1.5rem;
+
+    @include m.mq(v.$desktop) {
+      font-size: 2rem;
+    }
+  }
+
+  &__title {
+    color: white;
+    font-size: 6rem;
+    text-transform: uppercase;
+    margin: 2rem 0;
+    font-weight: 400;
+
+    @include m.mq(v.$desktop) {
+      font-size: 10rem;
+    }
+  }
+
+  &__text {
+    color: darken(white, 20%);
+    font-size: 1.1rem;
+    max-width: 30rem;
+    line-height: 1.5;
+
+    @include m.mq(v.$desktop) {
+      width: 30rem;
+      font-size: 1.2rem;
+    }
+  }
+
+  &__explore {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 50%;
+    width: 15rem;
+    height: 15rem;
+    margin: 2rem auto;
+
+    @include m.mq(v.$desktop) {
+      margin: 0 auto;
+      width: 18rem;
+      height: 18rem;
+    }
+
+    &-text {
+      text-transform: uppercase;
+      font-size: 2rem;
+      font-weight: 400;
+    }
+  }
+}

@@ -1,0 +1,34 @@
+<section class="destination">
+  <div class="destination__grid">
+    <div class="destination__intro">
+      <h2 class="destination__title"><span>01 </span>pick your destination</h2>
+      <img [src]="destinations[planet].image" alt="" class="destination__image">
+    </div>
+    <div class="destination__planet">
+      <nav class="destination__nav">
+        <p (click)="changePlanetPosition(0)" [ngClass]="planet === 0 ? 'destination__link-active' : ''" class="destination__link">MOON</p>
+        <p (click)="changePlanetPosition(1)" [ngClass]="planet === 1 ? 'destination__link-active' : ''" class="destination__link">MARS</p>
+        <p (click)="changePlanetPosition(2)" [ngClass]="planet === 2 ? 'destination__link-active' : ''" class="destination__link">EUROPA</p>
+        <p (click)="changePlanetPosition(3)" [ngClass]="planet === 3 ? 'destination__link-active' : ''" class="destination__link">TITAN</p>
+      </nav>
+
+      <div class="destination__info">
+        <h2 class="destination__name">{{destinations[planet].name}}</h2>
+        <p class="destination__text">{{destinations[planet].description}}</p>
+
+        <div class="destination__data">
+          <div class="destination__distance">
+            <p class="destination__distance-description">avg. distance</p>
+            <h3 class="destination__distance-average">{{destinations[planet].distance}}</h3>
+          </div>
+          <div class="destination__time">
+            <p class="destination__time-description">est. travel time</p>
+            <h3 class="destination__time-travel">{{destinations[planet].travel}}</h3>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</section>

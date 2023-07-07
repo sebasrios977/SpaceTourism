@@ -1,0 +1,25 @@
+<section class="technology">
+  <h2 class="technology__title"><span>03 </span>space launch 101</h2>
+  <div class="technology__grid">
+    <div class="technology__info">
+      <nav class="technology__navegacion">
+        <p [ngClass]="vehicle === 0 ? 'technology__link--active' : ''" class="technology__link" (click)="changeVehiclePosition(0)">1</p>
+        <p [ngClass]="vehicle === 1 ? 'technology__link--active' : ''" class="technology__link" (click)="changeVehiclePosition(1)">2</p>
+        <p [ngClass]="vehicle === 2 ? 'technology__link--active' : ''" class="technology__link" (click)="changeVehiclePosition(2)">3</p>
+      </nav>
+
+      <div class="technology__text">
+        <span class="technology__intro">the terminology...</span>
+        <h2 class="technology__name">{{technologies[vehicle].name}}</h2>
+        <p class="technology__paragraph">{{technologies[vehicle].description}}</p>
+      </div>
+    </div>
+
+    <div class="technology__portrait">
+      <picture>
+        <source media="(max-width: 768px)" [srcset]="technologies[vehicle].landscape">
+        <img [src]="technologies[vehicle].image" alt="imagen technologia" class="technology__image">
+      </picture>
+    </div>
+  </div>
+</section>

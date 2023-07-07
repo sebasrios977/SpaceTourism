@@ -1,0 +1,20 @@
+
+<nav class="nav">
+
+  <div class="nav__logo">
+    <img [routerLink]="'/space/home'" src="../../../assets/shared/logo.svg" alt="logo image" class="nav__image">
+  </div>
+
+  <img (click)="showMenu(true)" *ngIf="!isMenuShown" class="nav__icon" src="../../../assets/shared/icon-hamburger.svg" alt="image menu">
+
+  <ul *ngIf="isMenuShown" class="nav__items">
+    <img (click)="showMenu(false)" class="nav__close" src="../../../assets/shared/icon-close.svg" alt="close icon">
+    <li *ngFor="let item of menuItems"
+        class="nav__link"
+        [routerLink]="[item.route]"
+        routerLinkActive="nav__link-active">
+      <span>{{item.number}}</span> {{item.name}}
+    </li>
+  </ul>
+</nav>
+<router-outlet />

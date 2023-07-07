@@ -1,0 +1,166 @@
+@use '../globales/mixins' as m;
+@use '../globales/variables' as v;
+
+.technology {
+  width: 100vw;
+  height: 100vh;
+  background-image: url(../../../assets/technology/background-technology-mobile.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+
+  @include m.mq(v.$tablet) {
+    background-image: url(../../../assets/technology/background-technology-tablet.jpg);
+  }
+  @include m.mq(v.$desktop) {
+    background-image: url(../../../assets/technology/background-technology-desktop.jpg);
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-weight: 400;
+    text-align: start;
+    color: white;
+    margin: 12rem 2rem 0 2rem;
+    text-align: center;
+
+    @include m.mq(v.$tablet) {
+      margin-top: 15rem;
+      margin-left: 4rem;
+      text-align: left;
+    }
+
+    @include m.mq(v.$desktop) {
+      margin-left: 6rem;
+    }
+
+    @include m.mq(v.$ultra) {
+      margin-left: 15rem;
+    }
+
+    span {
+      color: darken(white, 30%)
+    }
+  }
+
+  &__grid {
+    padding: 2rem 1rem 0 1rem;
+    display: flex;
+    flex-direction: column;
+
+    @include m.mq(v.$tablet) {
+      flex-direction: row;
+      column-gap: 2rem;
+      padding: 10rem 3rem 0 3rem;
+      align-items: center;
+    }
+
+    @include m.mq(v.$desktop) {
+      column-gap: 5rem;
+      padding: 10rem 6rem 0 6rem;
+    }
+
+    @include m.mq(v.$ultra) {
+      column-gap: 10rem;
+      padding: 10rem 15rem 0 15rem;
+    }
+  }
+
+  &__info {
+    order: 2;
+
+    @include m.mq(v.$tablet) {
+      order: 1;
+      flex-basis: 50%;
+      display: flex;
+      column-gap: 1.5rem;
+      align-items: center;
+    }
+  }
+
+  &__navegacion {
+    display: flex;
+    justify-content: space-evenly;
+    color: white;
+
+    @include m.mq(v.$tablet) {
+      flex-direction: column;
+    }
+  }
+
+  &__link {
+    background-color: rgba(255, 255, 255, 0);
+    border: 1px solid white;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 400;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    &--active {
+      background-color: white;
+      color: black;
+    }
+  }
+
+  &__text {
+    color: white;
+    margin-top: 2rem;
+
+    @include m.mq(v.$tablet) {
+      margin-top: 1rem;
+    }
+  }
+
+  &__intro {
+    text-transform: uppercase;
+    color: darken(white, 20%);
+    font-size: .8rem;
+    font-weight: 400;
+  }
+
+  &__name {
+    font-size: 2.8rem;
+    margin: 1rem 0;
+  }
+
+  &__paragraph {
+    color: darken(white, 20%);
+
+    @include m.mq(v.$desktop) {
+      line-height: 2;
+    }
+
+    @include m.mq(v.$ultra) {
+      line-height: 2.5;
+    }
+  }
+
+
+  &__portrait {
+    margin: 0 auto;
+    @include m.mq(v.$tablet) {
+      order: 2;
+    }
+  }
+
+  &__image {
+    width: 100%;
+
+    @include m.mq(v.$tablet) {
+      width: 20rem;
+    }
+
+    @include m.mq(v.$desktop) {
+      width: 25rem;
+    }
+
+  }
+
+}
